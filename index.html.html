@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le Guide de Survie au Folklore Français</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--desk:#2b2524;--ink:#15100e;--blood:#9b1c1f;--bone:#efe7d2;--navbg:#1a1514;--a:#9b1c1f;
+--outline:drop-shadow(2px 0 0 #efe7d2) drop-shadow(-2px 0 0 #efe7d2) drop-shadow(0 2px 0 #efe7d2) drop-shadow(0 -2px 0 #efe7d2);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--desk:#0b0909;--navbg:#050404}}
+:root[data-theme="dark"]{--desk:#0b0909;--navbg:#050404}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--desk);font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;padding-bottom:68px;overflow-x:hidden}
+.stage{padding:16px 12px}
+.bk{position:relative;display:grid;grid-template-columns:1fr 1fr;width:min(1240px,100%,calc((100vh - 100px)*1.414));margin:0 auto;transition:transform .9s cubic-bezier(.55,0,.25,1)}
+.bk.cover{transform:translateX(-25%)}
+.pg{--pg:#e8dfc8;--tx:#1b1512;container-type:inline-size;position:relative;aspect-ratio:1/1.414;background-color:var(--pg);color:var(--tx);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 .2 0 0 0 0 .15 0 0 0 0 .1 0 0 0 .2 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");box-shadow:0 30px 60px #000a}
+.pl{border-radius:4px 0 0 4px}.pr{border-radius:0 4px 4px 0}
+.pg.ip{z-index:3}
+.bk.cover .pl{visibility:hidden}
+.in{position:relative;height:100%;padding:5cqw 5.5cqw;font-size:2cqw;line-height:1.38}
+.run{display:flex;justify-content:space-between;font-weight:700;font-size:1.5cqw;letter-spacing:.3em;text-transform:uppercase;border-bottom:.3cqw solid var(--tx);padding-bottom:1cqw;opacity:.85}
+h2,h3,h1{font-family:"Playfair Display",Georgia,serif;font-weight:900;margin:0;line-height:.95}
+h3{font-size:5.4cqw;font-style:italic;margin:3cqw 0 2cqw;color:var(--a)}
+.std{border:.3cqw solid var(--tx);border-left:1.6cqw solid var(--a);padding:2cqw 2.6cqw;font-size:2.5cqw;line-height:1.3;font-style:italic;font-weight:700;margin-bottom:3cqw}
+.cols{column-count:3;column-gap:2.4cqw;column-rule:.15cqw solid #8884}
+.cols p{margin:0 0 1.2cqw;text-align:justify;hyphens:auto}
+.cols p:first-child::first-letter{font-family:"Playfair Display",serif;font-weight:900;float:left;font-size:7cqw;line-height:.78;padding:.6cqw 1cqw 0 0;color:var(--a)}
+.ins2{display:flex;gap:3cqw;margin-top:2.4cqw}
+.fig svg{aspect-ratio:2.3/1}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:2.4cqw;margin-top:2.4cqw}
+.duo .fact{margin-top:0}
+.duo .fact{font-size:1.9cqw}.duo .fact b{font-size:2.4cqw}
+.fig{flex:1}
+.fig svg{display:block;width:100%;height:auto;border:.35cqw solid var(--tx);filter:contrast(1.1) saturate(.9)}
+.fig i{display:block;font-size:1.65cqw;line-height:1.2;margin-top:.8cqw}
+.fig b{font-style:normal;color:var(--a);letter-spacing:.15em;font-size:1.4cqw}
+.fact{margin-top:2.4cqw;padding:2cqw 2.6cqw;background:var(--a);color:#fff;font-size:2.1cqw;line-height:1.3;transform:rotate(-.8deg);box-shadow:.5cqw .8cqw 1cqw #0006}
+.fact b{display:block;font:900 2.8cqw "Playfair Display",serif;text-transform:uppercase;margin-bottom:.8cqw}
+.circ .fig svg{border-radius:50%;aspect-ratio:1;object-fit:cover}
+.circ .ins2{gap:5cqw;padding:0 14cqw}.circ .fig{text-align:center}
+.fo{position:absolute;bottom:3cqw;font-size:1.5cqw;letter-spacing:.2em;font-weight:700;z-index:9}
+.pl .fo{left:5.5cqw}.pr .fo{right:5.5cqw}
+/* image page */
+.art{position:absolute;inset:0;overflow:hidden}
+.pl .art{border-radius:4px 0 0 4px}.pr .art{border-radius:0 4px 4px 0}
+.art svg{width:100%;height:100%;display:block}
+.art:after{content:"";position:absolute;inset:0;background:linear-gradient(#000d,transparent 38%,transparent 62%,#000b);box-shadow:inset 0 0 12cqw #000c}
+.ttl{position:absolute;left:5.5cqw;right:5.5cqw;top:6cqw;z-index:5;color:#fff}
+.ttl small{display:block;font:700 1.7cqw "Cormorant Garamond",serif;letter-spacing:.35em;color:var(--a);filter:brightness(1.5)}
+.ttl h2{font-size:10.5cqw;font-style:italic;margin:1.4cqw 0;text-shadow:0 .5cqw 1.5cqw #000}
+.ttl p{margin:0;font-style:italic;font-size:2.4cqw}
+.ghost{position:absolute;right:3cqw;bottom:12cqw;font:900 50cqw "Playfair Display",serif;line-height:1;color:#fff;opacity:.07;z-index:1}
+.cut,.st{opacity:0}
+.cut{position:absolute;height:56%;aspect-ratio:2/3;bottom:9%;z-index:6;--r:-2deg;transform:rotate(var(--r));pointer-events:none}
+.pl .cut{right:-8%}.pr .cut{left:-8%}
+.cut svg{width:100%;height:100%;display:block;overflow:visible}
+.st{position:absolute;z-index:7;filter:drop-shadow(.6cqw 1cqw 1cqw #000a);max-width:46%;bottom:13cqw}
+.pl .st{left:5.5cqw;transform:rotate(-2deg)}.pr .st{right:5.5cqw;transform:rotate(2deg)}
+.st span{display:block;clip-path:polygon(0 6%,5% 0,12% 5%,20% 0,31% 5%,44% 0,58% 5%,71% 0,84% 5%,93% 0,100% 6%,100% 94%,94% 100%,82% 95%,66% 100%,52% 95%,38% 100%,24% 95%,10% 100%,0 94%);padding:2.6cqw 3.4cqw;background:var(--a);color:#fff;font:italic 700 3cqw/1.15 "Cormorant Garamond",serif}
+.pop .cut{animation:rise 1s cubic-bezier(.2,1.5,.4,1) .05s both}
+.pop .st{animation:slap .7s cubic-bezier(.2,1.4,.4,1) .7s both}
+@keyframes rise{0%{opacity:0;transform:translateY(60px) scale(.86) rotate(calc(var(--r) - 7deg));filter:var(--outline) drop-shadow(0 2px 3px #0008)}100%{opacity:1;transform:rotate(var(--r));filter:var(--outline) drop-shadow(1.4cqw 2.6cqw 2cqw #000c)}}
+@keyframes slap{0%{opacity:0;translate:0 28px;scale:1.12}100%{opacity:1;translate:0 0;scale:1}}
+@media (prefers-reduced-motion:reduce){.pop .cut,.pop .st{animation:fade .5s both}.bk{transition:none}@keyframes fade{to{opacity:1}}}
+/* cover */
+.cv{--pg:#8e1a22;--tx:#efe7d2}
+.cv .in{padding:4.5cqw}
+.cv .fr{position:absolute;inset:3cqw;border:.5cqw solid var(--bone);pointer-events:none}
+.cv .mast{text-align:center;padding-top:4cqw}
+.cv .mast small{display:block;letter-spacing:.4em;font-size:1.7cqw;font-weight:700}
+.cv h1{font-size:15cqw;font-style:italic;color:var(--bone);margin:1cqw 0 0;text-shadow:.5cqw .6cqw 0 #3a0a0e}
+.cv h1 span{display:block;font-size:6.6cqw;letter-spacing:.3em;font-style:normal}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:2cqw;margin:5cqw 4cqw 0}
+.tiles div{aspect-ratio:1.5;overflow:hidden;position:relative;border:.3cqw solid #0006}
+.tiles svg{position:absolute;left:25%;top:6%;width:50%;height:auto;overflow:visible}
+.tiles em{position:absolute;left:2cqw;bottom:1cqw;font:900 2.2cqw "Playfair Display",serif;color:#fff;text-shadow:0 0 1cqw #000}
+.cv .sub{position:absolute;left:0;right:0;bottom:6cqw;text-align:center;font-style:italic;font-size:2.4cqw}
+.cv .cut{height:auto;width:25cqw;right:6cqw;left:auto;bottom:15cqw;--r:6deg}
+.pl .cut.x,.pr .cut.x{left:auto}
+.list{list-style:none;margin:2cqw 0;padding:0}
+.list li{display:flex;justify-content:space-between;gap:2cqw;padding:1.3cqw 0;border-bottom:.2cqw solid #fff6;font-size:2.4cqw}
+.list b{font-family:"Playfair Display",serif;font-style:italic}
+.circs{display:flex;gap:1.6cqw;margin:3cqw 0}
+.circs span{flex:1;aspect-ratio:1;border-radius:50%;overflow:hidden;position:relative;border:.3cqw solid #fff}
+.circs svg{position:absolute;left:18%;top:8%;width:64%;height:auto}
+.rules{list-style:none;counter-reset:r;padding:0;margin:2cqw 0}
+.rules li{counter-increment:r;display:flex;gap:3cqw;align-items:baseline;padding:2cqw 0;border-bottom:.2cqw solid #15100e55;font-size:2.6cqw}
+.rules li:before{content:counter(r);font:900 7cqw/.8 "Playfair Display",serif;color:var(--a)}
+.bar{height:16cqw;width:34cqw;background:repeating-linear-gradient(90deg,#efe7d2 0 .5cqw,transparent .5cqw 1cqw,#efe7d2 1cqw 2cqw,transparent 2cqw 2.6cqw,#efe7d2 2.6cqw 3cqw,transparent 3cqw 4cqw);margin:4cqw auto 0}
+.sh{position:absolute;top:0;bottom:0;right:0;width:50%;z-index:30;background:linear-gradient(90deg,#b9ae91,#dcd3ba 40%);transform-origin:left center;box-shadow:0 0 40px #000c;border-radius:0 4px 4px 0}
+.sh.back{right:auto;left:0;transform-origin:right center;border-radius:4px 0 0 4px}
+.sh[hidden]{display:none}
+nav{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;justify-content:center;align-items:center;gap:16px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:var(--navbg);border-top:1px solid #4a1214}
+button{font:700 .85rem "Cormorant Garamond",serif;letter-spacing:.2em;text-transform:uppercase;background:var(--blood);color:var(--bone);border:0;padding:9px 18px;cursor:pointer}
+button:disabled{opacity:.3;cursor:default}
+button:focus-visible{outline:3px solid var(--bone);outline-offset:2px}
+#n{min-width:120px;text-align:center;color:var(--bone);letter-spacing:.15em;font-size:.85rem}
+@media (max-width:820px){
+.bk{display:flex;flex-direction:column;width:100%}.bk.cover{transform:none}.bk.cover .pl{display:none}
+.pg{aspect-ratio:auto;min-height:150cqw}.pg.ip{min-height:130cqw;order:-1}.in{font-size:3.6cqw}
+.cols{column-count:1}.fig i{font-size:3cqw}.fig b{font-size:2.5cqw}.run{font-size:2.6cqw}.std{font-size:4cqw}.fact{font-size:3.6cqw}.fact b{font-size:4.4cqw}
+.ttl h2{font-size:14cqw}.ttl p,.st span{font-size:4.4cqw}.ttl small{font-size:2.6cqw}.list li,.rules li{font-size:4cqw}.cv{min-height:170cqw}.cv .sub,.cv .mast small{font-size:3.4cqw}
+.fo{position:static;display:block;margin-top:4cqw}.ip .fo{position:absolute}
+.sh,.sh.back{width:100%;left:0;right:0;transform-origin:left center}}
+.gm{--a:#d9262f}
+.qrc{float:left;width:36cqw;margin:1cqw 3.5cqw 1cqw 0;background:#fff;padding:2cqw;border:.5cqw solid var(--tx);transform:rotate(-2deg);box-shadow:.8cqw 1.2cqw 1.5cqw #000a;text-align:center;color:#15100e}
+.qrc img{display:block;width:100%;height:auto;image-rendering:pixelated}
+.qrc b{display:block;font:900 2.2cqw "Playfair Display",serif;letter-spacing:.2em;text-transform:uppercase;margin-top:1.4cqw}
+.gm a{color:var(--tx);font-weight:700}
+.gm .rules li{font-size:2.5cqw;padding:1.4cqw 0}
+.gm .rules li:before{font-size:6cqw}
+.gm .cl{clear:both}
+@media (max-width:820px){.qrc{float:none;width:62cqw;margin:4cqw auto}.gm .rules li{font-size:4cqw}}
+/* === Cinematic gothic redesign === */
+:root{--blood:#7d1424;--bone:#e6d8b4;--gold:#b8923f}
+.pg{--pg:#120d0d;--tx:#e6dac0}
+.pg:not(.ip):not(.cv):before{content:"";position:absolute;inset:2.2cqw;border:.15cqw solid #b8923f66;box-shadow:inset 0 0 14cqw #000a;pointer-events:none}
+.run{font:700 1.35cqw Cinzel,Georgia,serif;letter-spacing:.34em;border-bottom:.15cqw solid var(--gold);color:var(--gold);opacity:1}
+h3{color:color-mix(in srgb,var(--a) 62%,#fff)}
+.std{border:.15cqw solid var(--gold);border-left:1.2cqw solid var(--a);background:#ffffff08;font-weight:600}
+.cols p:first-child::first-letter{color:var(--gold);font-size:8cqw}
+.fig svg{border:.2cqw solid var(--gold);filter:none;box-shadow:0 1cqw 2cqw #000a}
+.fig b{font-family:Cinzel,serif;color:var(--gold)}
+.fact{background:linear-gradient(135deg,#4a0c18,#150407);border:.15cqw solid var(--gold);color:#ecdcb8;transform:none;box-shadow:0 1cqw 2cqw #000a}
+.fact b{color:#e8c46a}
+.rules li{border-bottom-color:#b8923f44}.rules li:before{color:var(--gold)}
+.list li{border-bottom-color:#b8923f55}
+.fo{font-family:Cinzel,serif;color:var(--gold)}
+.art:after{background:linear-gradient(#000e,transparent 40%,transparent 58%,#000d),linear-gradient(90deg,#0006,transparent 30%,transparent 70%,#0006);box-shadow:inset 0 0 14cqw #000}
+.ttl small{font-family:Cinzel,serif;letter-spacing:.4em}
+.ttl h2,.cv h1{background:linear-gradient(#fbefc8 20%,#c99a44 90%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 .5cqw 1cqw #000)}
+.st span{clip-path:none;background:linear-gradient(#1d0a0e,#080304);color:#ecdcb8;border:.15cqw solid var(--gold);outline:.15cqw solid #b8923f66;outline-offset:-.8cqw;font-weight:600}
+@keyframes rise{0%{opacity:0;transform:translateY(40px) scale(.94) rotate(var(--r));filter:drop-shadow(0 0 0 transparent)}100%{opacity:1;transform:rotate(var(--r));filter:drop-shadow(0 0 1.4cqw color-mix(in srgb,var(--a) 70%,transparent)) drop-shadow(1.4cqw 2.6cqw 2cqw #000d)}}
+@keyframes drift{to{transform:scale(1.07) translate(-1%,-1%)}}
+.pop .cut{animation:rise 1.5s cubic-bezier(.16,1,.3,1) .05s both}
+.pop .st{animation:slap 1.2s ease .8s both}
+.pop .art svg{animation:drift 22s ease-in-out infinite alternate}
+@media (prefers-reduced-motion:reduce){.pop .cut,.pop .st{animation:fade .5s both}.pop .art svg{animation:none}}
+.cv{--pg:#120708;--tx:#e8dcbc;background-image:radial-gradient(ellipse at 50% 22%,#6a1222 0,#2a0810 45%,#0a0405 85%)}
+.cv .fr{border:.2cqw solid var(--gold)}
+.cv .mast small,.cv .sub{font-family:Cinzel,serif;color:var(--gold)}
+.tiles div,.circs span{background-image:radial-gradient(circle at 50% 38%,#ffffff2e,transparent 62%),linear-gradient(transparent 55%,#000b);border:.2cqw solid var(--gold)}
+.tiles em{font-family:Cinzel,serif;font-size:1.9cqw;font-weight:700}
+nav{border-top:1px solid var(--gold)}
+button{font-family:Cinzel,serif;background:linear-gradient(#7d1424,#430a13);border:1px solid var(--gold)}
+/* === v5 additions === */
+.cr h3{color:#4a2f04}.cr .run{color:#5a3a05;border-bottom-color:#5a3a05}.cr .fo{color:#5a3a05}.cr .rules li:before{color:#7d1424}.cr .rules li{border-bottom-color:#15100e44}
+.pq{font:900 italic 5.4cqw/1.05 "Playfair Display",serif;color:var(--gold);text-align:center;border-top:.3cqw solid var(--gold);border-bottom:.3cqw solid var(--gold);padding:2.4cqw 0;margin:3cqw 0}
+.vc{display:grid;grid-template-columns:1fr 1fr;gap:0 3cqw;margin:1cqw 0 2.2cqw}
+.vc h4{grid-column:1/-1;margin:2cqw 0 .4cqw;font:700 1.5cqw Cinzel,Georgia,serif;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.vc div{display:flex;justify-content:space-between;align-items:baseline;gap:1.6cqw;padding:1.1cqw 0;border-bottom:.15cqw dotted #b8923f99}
+.vc b{font:italic 700 2.2cqw "Playfair Display",Georgia,serif;color:#f1e5c4}.vc i{font-size:1.9cqw;text-align:right}
+@media (max-width:820px){.vc{grid-template-columns:1fr}.vc b{font-size:4.4cqw}.vc i{font-size:3.8cqw}.vc h4{font-size:2.8cqw}.pq{font-size:9cqw}}
+/* === v6 additions === */
+.refs{list-style:none;margin:2cqw 0;padding:0}
+.refs li{padding:1.3cqw 0;border-bottom:.15cqw dotted #b8923f99;font-size:1.95cqw;line-height:1.3}
+.refs b{display:block;font:700 1.45cqw Cinzel,Georgia,serif;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.4cqw}
+.team{margin:2cqw 0}
+.team h4{margin:0 0 1cqw;font:700 1.5cqw Cinzel,Georgia,serif;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.team div{display:flex;justify-content:space-between;align-items:center;gap:2cqw;padding:2cqw 0;border-bottom:.15cqw dotted #b8923f99}
+.team b{display:block;font:italic 900 3cqw "Playfair Display",Georgia,serif;color:#f1e5c4}
+.team em{display:block;font-size:1.8cqw;opacity:.85}
+.team i{font:700 2cqw Cinzel,Georgia,serif;letter-spacing:.08em;color:var(--gold)}
+@media (max-width:820px){.refs li{font-size:3.6cqw}.refs b{font-size:2.6cqw}.team b{font-size:5cqw}.team em{font-size:3.4cqw}.team i{font-size:3.4cqw}}
+</style>
+
+</head>
+<body>
+<div class="stage"><div class="bk cover" id="bk"></div></div>
+<nav><button id="p" aria-label="Page précédente">‹ Précédent</button><span id="n"></span><button id="x" aria-label="Page suivante">Suivant ›</button></nav>
+<script>
+var U=0,SD=7,DF='<filter id="b4" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3.5"/></filter><filter id="b14" x="-30%" y="-150%" width="160%" height="400%"><feGaussianBlur stdDeviation="13"/></filter><filter id="gn" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 .9 0 0 0 0 .85 0 0 0 0 .75 0 0 0 1.5 -.55"/></filter>';
+function rn(){SD=SD*16807%2147483647;return SD/2147483647}
+function Z(n){SD=n;return ""}
+function G(s,t){var i='g'+U++,k=t=='r'?'radialGradient':'linearGradient';DF+='<'+k+' id="'+i+'"'+(t?'':' x2="0" y2="1"')+'>'+s.map(function(a){return '<stop offset="'+a[0]+'" stop-color="'+a[1]+'" stop-opacity="'+(a[2]==null?1:a[2])+'"/>'}).join('')+'</'+k+'>';return 'url(#'+i+')'}
+function GL(x,y,r,c,o){return '<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="'+G([[0,c,o||.8],[1,c,0]],'r')+'"/>'}
+function RC(f,x,y,w,h){return '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" fill="'+f+'"/>'}
+function PA(d,f,o,fl){return '<path d="'+d+'" fill="'+f+'"'+(o?' opacity="'+o+'"':'')+(fl?' filter="url(#'+fl+')"':'')+'/>'}
+function RG(y,a,c,n){var p='M0 '+y,i;for(i=1;i<=n;i++)p+='L'+(300*i/n)+' '+(y+(rn()-.5)*a).toFixed(1);return PA(p+'V424H0z',c)}
+function PN(y,n,c,a,b,x0,x1){var p='',i,x,h,w,k;for(i=0;i<n;i++){x=x0+rn()*(x1-x0);h=a+rn()*(b-a);w=h*.2;for(k=0;k<4;k++)p+='M'+(x-w*(1-k*.2)).toFixed(1)+' '+(y-h*k*.2).toFixed(1)+'L'+x.toFixed(1)+' '+(y-h*(.36+k*.2)).toFixed(1)+'L'+(x+w*(1-k*.2)).toFixed(1)+' '+(y-h*k*.2).toFixed(1)+'z'}return PA(p,c)}
+function FO(y,c,o,w){return '<ellipse cx="150" cy="'+y+'" rx="'+(w||200)+'" ry="22" fill="'+c+'" opacity="'+o+'" filter="url(#b14)"/>'}
+function DU(n,c,x,y,w,h,r){var s='',i;for(i=0;i<n;i++)s+='<circle cx="'+(x+rn()*w).toFixed(1)+'" cy="'+(y+rn()*h).toFixed(1)+'" r="'+(.4+rn()*(r||1.3)).toFixed(1)+'"/>';return '<g fill="'+c+'" opacity=".9">'+s+'</g>'}
+function CR(n,f,cx,cy,sx,sy,a,b){var s='',i;for(i=0;i<n;i++)s+='<circle cx="'+(cx+(rn()-.5)*sx).toFixed(0)+'" cy="'+(cy+(rn()-.5)*sy).toFixed(0)+'" r="'+(a+rn()*(b-a)).toFixed(1)+'"/>';return '<g fill="'+f+'">'+s+'</g>'}
+function RY(x,y,c,o){return '<g opacity="'+o+'" filter="url(#b4)">'+PA('M'+x+' '+y+'L'+(x-70)+' 424L'+(x-24)+' 424ZM'+x+' '+y+'L'+(x+4)+' 424L'+(x+48)+' 424Z',G([[0,c,.9],[1,c,0]]))+'</g>'}
+var VG=G([[.4,'#000',0],[1,'#000',.85]],'r');
+function FN(w,h){return '<rect width="'+w+'" height="'+h+'" fill="'+VG+'"/><rect width="'+w+'" height="'+h+'" filter="url(#gn)" opacity=".3" style="mix-blend-mode:overlay"/>'}
+function V(w,h,i){return '<svg viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'+i+FN(w,h)+'</svg>'}
+function FG(d,c,r,x){return '<path transform="translate(2.6 -1.4)" d="'+d+'" fill="'+r+'"/><path d="'+d+'" fill="'+c+'"/>'+(x||'')}
+function PF(f,x,y,s,fl){return '<g transform="translate('+(fl?x+200*s:x)+' '+y+') scale('+(fl?-s:s)+' '+s+')">'+f+'</g>'}
+function C(i){return '<svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><ellipse cx="100" cy="297" rx="86" ry="7" fill="#000" opacity=".55" filter="url(#b4)"/>'+i+'</svg>'}
+function PAL(y,c,w){var s=PA('M0 '+y+'V'+(y-38)+'H300V'+y+'ZM104 '+(y-38)+'V'+(y-62)+'L150 '+(y-92)+'L196 '+(y-62)+'V'+(y-38)+'ZM0 '+(y-38)+'L22 '+(y-60)+'H70L92 '+(y-38)+'ZM208 '+(y-38)+'L230 '+(y-60)+'H278L300 '+(y-38)+'Z',c)+PA('M144 '+(y-92)+'h12v-22h-12z',c),i;for(i=0;i<22;i++)if(rn()<w)s+='<rect x="'+(8+i*13)+'" y="'+(y-28)+'" width="5" height="10" fill="#ffb347"/>';return s}
+var CO='M100 52C113 52 127 58 134 71C140 94 142 130 146 170C152 210 162 250 178 292L150 297C140 272 130 264 118 264L113 297H87L82 264C70 264 60 272 50 292L24 286C40 242 52 206 54 170C58 130 60 94 66 71C73 58 87 52 100 52Z',
+HD='M100 18C111 18 116 28 115 40C114 50 108 58 100 58C92 58 86 50 85 40C84 28 89 18 100 18Z',
+DK=G([[0,'#141a22'],[1,'#04060a']]),CU=G([[0,'#2a0508'],[.5,'#951a2e'],[1,'#240408']],'h'),F={};
+F.gent=FG(CO+HD+'M83 20L85-6H115L117 20ZM71 22Q100 29 129 22L127 18H73Z',DK,'#86c9df','<path d="M100 58L88 160M100 58L112 160M90 120h20M92 172q8 6 16 0" stroke="#2c3b4a" stroke-width="1.2" fill="none"/><path d="M94 40h4M104 40h4" stroke="#cdeaf2" stroke-width="1.4"/>');
+F.man=FG(CO+HD,'#14100d','#ffb04a','<path d="M86 100h28l8 190H78z" fill="#e8dcc0" opacity=".5"/><path d="M94 40h4M104 40h4" stroke="#ffe3c0" stroke-width="1.4"/>');
+F.red=FG('M100 6L83 54C79 62 86 70 100 70C114 70 121 62 117 54ZM66 76C80 62 120 62 134 76C150 104 152 168 164 296H38C50 210 54 110 66 76Z','#5a0a12','#ff6a3d','<ellipse cx="100" cy="58" rx="12" ry="10" fill="#8a7a68"/><path d="M92 56h5M104 56h5" stroke="#ffe3c0" stroke-width="1.5"/><path d="M82 50Q100 58 118 50" stroke="#c4161f" stroke-width="4" fill="none"/><path d="M70 150L60 296" stroke="#2c0408" stroke-width="1.4"/><path d="M136 132L178 92L183 99L146 142Z" fill="#c9d3dc"/><path d="M96 210v18M112 220v12" stroke="#a3121d" stroke-width="2.4"/>');
+F.woman=GL(100,160,110,'#bcd6ff',.22)+'<path d="M92 20C66 34 62 100 54 176C72 150 80 110 88 66ZM108 20C134 34 138 100 148 180C128 152 122 110 112 66Z" fill="#06080e"/>'+FG('M100 20C110 20 114 30 113 40C112 50 106 58 100 58C94 58 88 50 87 40C86 30 90 20 100 20ZM100 56C113 56 121 66 123 82L128 132C134 190 142 252 172 297H30C60 252 66 190 72 132L77 82C79 66 87 56 100 56ZM122 84L180 120L177 127L120 100Z',G([[0,'#f6f8ff'],[1,'#7f93bd']]),'#fff','<path d="M180 120l12 4M179 124l10 8" stroke="#e8eeff" stroke-width="3" stroke-linecap="round"/><path d="M95 40h3M104 40h3" stroke="#0b0e16" stroke-width="1.6"/><path d="M84 160C90 210 80 250 60 297M116 160C112 210 124 250 142 297" stroke="#9fb0d2" stroke-width="1.2" fill="none"/>');
+F.mask='<path d="M54 170C52 206 40 242 24 286L50 292C60 272 70 264 82 264Z" fill="#7a1224"/>'+FG(CO+HD+'M62 30Q100 12 138 30Q100 22 62 30ZM84 26C85 4 115 4 116 26Z',DK,'#e0b04c','<path d="M100 30C90 30 86 40 88 52C90 60 96 62 100 62Z" fill="#f1ebdd"/><path d="M91 40h6" stroke="#0a0608" stroke-width="2"/><path d="M104 40h5" stroke="#d8c9a8" stroke-width="1.4"/><path d="M96 54q4 2 8 0" stroke="#7a1224" stroke-width="1.5" fill="none"/><path d="M100 52L90 150M100 52L110 150" stroke="#e0b04c" stroke-width="1.3" fill="none" opacity=".8"/><path d="M66 72C100 90 134 72 134 72" stroke="#e0b04c" stroke-width="1.6" fill="none"/>');
+F.wiz=GL(154,16,44,'#e8c86a',.8)+'<path d="M152 14h4v284h-4z" fill="#2a1c10"/>'+FG('M100 12C84 12 76 30 78 48C70 56 64 70 62 84C80 70 120 70 138 84C136 70 130 56 122 48C124 30 116 12 100 12ZM100 66C124 66 138 80 142 104C146 150 148 220 164 294H36C50 220 54 150 58 104C62 80 76 66 100 66Z',G([[0,'#1b2a22'],[1,'#070c09']]),'#d8b45a','<path d="M90 40C90 30 110 30 110 40C110 52 104 56 100 56C96 56 90 52 90 40Z" fill="#0a0f0c"/><path d="M91 54C90 82 96 104 100 118C104 104 110 82 109 54Z" fill="#cfd8cf" opacity=".85"/><path d="M95 42h3M104 42h3" stroke="#f0d98a" stroke-width="1.4"/><path d="M128 100L152 124" stroke="#1b2a22" stroke-width="7" stroke-linecap="round"/><circle cx="154" cy="14" r="6" fill="#fff2c0"/><path d="M62 200q38 22 76 0" stroke="#d8b45a" stroke-width="1.2" fill="none" opacity=".7"/>');
+F.lant=GL(100,150,120,'#f0a834',.5)+'<path d="M100 0V34" stroke="#0d0a08" stroke-width="3"/><path d="M62 38h76l10 24H52z" fill="#0d0a08"/><path d="M70 36Q100 14 130 36" fill="none" stroke="#0d0a08" stroke-width="4"/><path d="M60 64H140L132 214H68Z" fill="'+G([[0,'#ffe9a3'],[.5,'#f0a834'],[1,'#a8480f']])+'"/><path d="M100 196C70 180 78 140 100 96C122 140 130 180 100 196Z" fill="#fff6d4"/><path d="M60 64L68 214M140 64L132 214M100 64V214M64 140H136" stroke="#0d0a08" stroke-width="4" fill="none"/><path d="M56 214H144L136 236H64Z" fill="#0d0a08"/><path d="M100 236V262" stroke="#0d0a08" stroke-width="3"/>';
+var RING='<path d="M138 84L178 148L170 154L130 100Z" fill="#05080c"/>'+GL(177,140,34,'#f1c75a',.8)+'<ellipse cx="177" cy="140" rx="13" ry="5.5" fill="none" stroke="#ffe08a" stroke-width="3.2" transform="rotate(-16 177 140)"/>';
+var ART={drac:C(F.gent+RING),rouge:C(F.red),dame:C(F.woman),opera:C(F.mask),merlin:C(F.wiz),lantern:C(F.lant)};
+var FLM=G([[0,'#fff0a0'],[.4,'#ff9a2a'],[1,'#b81c0c']]);
+var BD={
+drac:V(300,424,Z(1)+RC(G([[0,'#03060b'],[.55,'#0b2236'],[1,'#1c4c64']]),0,0,300,240)+GL(225,86,130,'#7fc4dd',.4)+'<circle cx="225" cy="86" r="30" fill="#eaf4f6"/><circle cx="216" cy="80" r="6" fill="#c3d9df" opacity=".6"/><circle cx="236" cy="96" r="4" fill="#c3d9df" opacity=".5"/>'+FO(110,'#9cc9d8',.16)+FO(160,'#4d8ba3',.28)+RG(214,16,'#071a28',24)+PA('M10 216V188h6v-8h8v8h10v-22l5-9 5 9v22h14v-6h8v6h6V216z','#050f18')+RC(G([[0,'#10405a'],[1,'#01060a']]),0,216,300,208)+'<ellipse cx="225" cy="270" rx="9" ry="52" fill="#d4ecf2" opacity=".28" filter="url(#b4)"/>'+GL(120,310,70,'#f1c75a',.6)+'<ellipse cx="120" cy="310" rx="22" ry="7" fill="none" stroke="#ffe08a" stroke-width="3.5"/><ellipse cx="120" cy="310" rx="38" ry="12" fill="none" stroke="#f1c75a" stroke-width=".9" opacity=".7"/><ellipse cx="120" cy="310" rx="58" ry="18" fill="none" stroke="#7fc4dd" stroke-width=".7" opacity=".5"/>'+RY(225,90,'#9fd0e0',.18)+FO(250,'#6fa6bb',.3)+'<path d="M16 424C18 380 10 340 2 296M30 424C32 392 38 356 52 330M284 424C282 384 290 344 298 300M268 424C270 396 262 366 250 346" stroke="#010305" stroke-width="2.4" fill="none"/>'+PA('M0 424V396Q60 380 120 404T300 396V424Z','#010305')+DU(26,'#f1c75a',0,250,300,150,1.2)),
+rouge:V(300,424,Z(2)+RC(G([[0,'#05020a'],[.5,'#3a0a14'],[1,'#d4501a']]),0,0,300,424)+GL(150,330,200,'#ff7a2a',.55)+'<ellipse cx="90" cy="120" rx="50" ry="110" fill="#0a0305" opacity=".75" filter="url(#b14)"/><ellipse cx="220" cy="90" rx="46" ry="100" fill="#0a0305" opacity=".7" filter="url(#b14)"/>'+PAL(330,'#0b0305',.55)+PA('M20 330Q40 270 56 330Q70 250 92 330Q110 230 130 330Q150 210 170 330Q190 240 210 330Q226 270 250 330Q262 290 280 330Z',FLM)+FO(330,'#ff8a3a',.5)+RC('#050203',0,330,300,94)+(function(){var s='',i;for(i=0;i<30;i++)s+='M'+(i*10+3)+' 424V350l-2-8l2-6l2 6z';return PA(s,'#0b0407')})()+PF(F.red,118,330,.28)+DU(40,'#ffb347',20,60,260,300,1.5)+RY(150,300,'#ff8a3a',.14)),
+dame:V(300,424,Z(3)+RC(G([[0,'#04060c'],[.6,'#0e1a34'],[1,'#2b4066']]),0,0,300,300)+GL(88,96,150,'#a9c4ee',.4)+'<circle cx="88" cy="96" r="40" fill="#eef3fb"/><circle cx="76" cy="86" r="7" fill="#c8d4e8" opacity=".6"/><circle cx="100" cy="108" r="5" fill="#c8d4e8" opacity=".5"/>'+DU(30,'#fff',0,0,300,200,.8)+FO(220,'#9fb6d8',.2)+RG(250,22,'#080d18',18)+RC(G([[0,'#3a4258'],[1,'#10131c']]),0,296,300,128)+PA('M30 424V372Q150 250 270 372V424Z','#05070c')+'<ellipse cx="150" cy="384" rx="100" ry="26" fill="#6e88b8" opacity=".25" filter="url(#b14)"/>'+PA('M0 296H300V306H0Z','#5a6178')+(function(){var s='',i;for(i=0;i<15;i++)s+='M'+(i*21+4)+' 296V278h9V296z';return PA(s,'#2a3046')})()+PA('M0 276H300V282H0Z','#4b526a')+PF(F.woman,80,60,.78)+RY(88,96,'#a9c4ee',.1)+FO(300,'#c4d4f0',.35)+FO(350,'#9fb6d8',.3)+FO(410,'#7f98c4',.35)),
+opera:V(300,424,Z(4)+RC(G([[0,'#0a0205'],[.5,'#2a0710'],[1,'#07020a']]),0,0,300,424)+GL(150,140,170,'#ffcf6a',.5)+'<path d="M40 424V150Q150 40 260 150V424" fill="none" stroke="#c99a38" stroke-width="5"/><path d="M52 424V156Q150 56 248 156V424" fill="none" stroke="#7a5a1c" stroke-width="2"/>'+RC(G([[0,'#150408'],[1,'#080204']]),60,170,180,254)+'<path d="M0 340Q75 318 150 340T300 340V424H0Z" fill="#120408"/><path d="M150 0V86" stroke="#c99a38" stroke-width="2"/>'+(function(){var s='',i,w;for(i=0;i<5;i++){w=14+i*14;s+='<ellipse cx="150" cy="'+(96+i*14)+'" rx="'+w+'" ry="'+(w/4)+'" fill="none" stroke="#e8b84a" stroke-width="1.8"/>'}return s})()+GL(150,130,60,'#ffe9a8',.9)+DU(26,'#fff1c0',100,90,100,70,1.6)+(function(){var s='',i;for(i=0;i<3;i++)s+=RC(CU,i*22,0,22,424)+RC(CU,278-i*22,0,22,424);return s})()+PA('M250 215H292V230H250ZM8 215H50V230H8Z','#c99a38')+GL(271,222,16,'#ffd77a',.7)+RY(150,120,'#ffcf6a',.16)+FO(400,'#7a1226',.4)),
+merlin:V(300,424,Z(5)+RC(G([[0,'#020807'],[.5,'#0a2420'],[1,'#173d34']]),0,0,300,424)+GL(210,70,140,'#cfe8d0',.35)+'<circle cx="210" cy="70" r="22" fill="#e8f3de"/>'+RY(210,70,'#cfe8d0',.2)+PN(300,22,'#06140f',60,120,0,300)+FO(250,'#7fb8a4',.22)+PN(340,16,'#030b08',90,170,0,300)+FO(330,'#5f9a88',.25)+GL(150,350,90,'#e0b04c',.55)+'<ellipse cx="150" cy="350" rx="96" ry="24" fill="none" stroke="#e8c260" stroke-width="2.2" stroke-dasharray="7 5"/><ellipse cx="150" cy="350" rx="70" ry="17" fill="none" stroke="#e8c260" stroke-width="1" opacity=".8"/><path d="M150 330v-4M110 342l-3-3M190 342l3-3M92 356l-4 1M208 356l4 1" stroke="#ffe08a" stroke-width="1.6"/>'+PA('M0 0H64Q50 60 60 140Q40 220 56 290Q30 340 0 424Z','#020605')+PA('M300 0H236Q250 60 240 140Q262 220 246 290Q272 340 300 424Z','#020605')+CR(18,'#030c08',150,24,330,70,16,40)+DU(40,'#ffe08a',30,200,240,200,1.4)+DU(18,'#e8fff0',20,40,260,120,.9)+PA('M0 424V390Q50 372 100 400T200 392T300 400V424Z','#010403')),
+end:V(300,424,Z(6)+RC(G([[0,'#04050a'],[.6,'#171128'],[1,'#3a2a14']]),0,0,300,424)+GL(150,250,160,'#f0a834',.5)+PN(280,26,'#0a0814',70,140,0,300)+FO(260,'#9a7a4a',.2)+PN(330,18,'#04030a',100,190,0,300)+PA('M70 424L146 280H154L230 424Z','#2a1c10',.7)+GL(150,270,40,'#ffd77a',.9)+RY(150,270,'#f0a834',.12)+FO(340,'#8a6a3a',.3)+DU(40,'#ffd77a',20,100,260,300,1.3)+PA('M0 424V400Q60 384 120 408T240 396T300 410V424Z','#020204'))};
+var IN={
+drac:[V(300,200,Z(11)+RC(G([[0,'#03080e'],[1,'#0c2b40']]),0,0,300,200)+'<ellipse cx="226" cy="70" rx="8" ry="64" fill="#cfe9f0" opacity=".22" filter="url(#b4)"/>'+GL(150,122,84,'#f1c75a',.65)+'<g fill="none" stroke="#7fc4dd" opacity=".55"><ellipse cx="150" cy="122" rx="38" ry="9"/><ellipse cx="150" cy="122" rx="62" ry="15" opacity=".6"/><ellipse cx="150" cy="122" rx="96" ry="23" opacity=".35"/></g><ellipse cx="150" cy="120" rx="22" ry="6.5" fill="none" stroke="#ffe08a" stroke-width="4"/><ellipse cx="150" cy="118.5" rx="22" ry="5" fill="none" stroke="#fff6cc" stroke-width="1" opacity=".8"/><path d="M-10 36C40 32 90 58 128 92" stroke="#aebdc6" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M128 92l10 8M130 88l12 2M126 96l8 12" stroke="#aebdc6" stroke-width="2.6" stroke-linecap="round"/>'+FO(150,'#6fa6bb',.25)+'<path d="M12 200C14 168 8 140 0 116M286 200C288 170 296 146 300 124" stroke="#010305" stroke-width="2.4" fill="none"/>'+DU(18,'#f1c75a',60,70,180,120,1.1)),
+V(300,200,Z(12)+RC(G([[0,'#1a0a0c'],[1,'#7a3a14']]),0,0,300,200)+GL(150,70,130,'#ffb347',.45)+PA('M0 200V60l30-22 30 22V200zM240 200V50l30-20 30 20V200z','#0c0507')+'<path d="M40 70H260L248 96H52Z" fill="#8a1c24"/><path d="M60 70L54 96M100 70L98 96M140 70L140 96M180 70L182 96M220 70L226 96" stroke="#e8dcc0" stroke-width="3" opacity=".7"/><g filter="url(#b4)">'+DU(14,'#ffcf7a',0,20,300,100,6)+'</g><g opacity=".6">'+PF(F.gent,100,92,.28)+PF(F.man,126,92,.28)+PF(F.gent,70,96,.26)+'</g>'+PF(F.woman,30,40,.52)+PF(F.gent,170,40,.52,1)+GL(222,60,10,'#9fffd0',.9)+FO(190,'#ffb347',.18))],
+rouge:[V(300,200,Z(13)+RC(G([[0,'#0c0505'],[1,'#2a1008']]),0,0,300,200)+GL(110,40,140,'#ffb04a',.6)+'<path d="M0 22H300" stroke="#1a0a06" stroke-width="6"/><path d="M40 22v26M80 22v18M200 22v24M250 22v18" stroke="#2a1a14" stroke-width="2"/><g fill="#6a1218"><ellipse cx="40" cy="70" rx="9" ry="22"/><ellipse cx="80" cy="60" rx="8" ry="20"/><ellipse cx="200" cy="68" rx="9" ry="22"/><ellipse cx="250" cy="58" rx="8" ry="19"/></g>'+RC('#2a170c',70,150,120,50)+RC('#4a2a14',66,146,128,8)+PF(F.man,95,20,.58)+'<path d="M182 62L206 54L210 68L186 76Z" fill="#c9d0d6"/><path d="M186 76L176 96" stroke="#2a1008" stroke-width="3"/>'+DU(14,'#ffb347',60,60,180,100,1)),
+V(300,200,Z(14)+RC(G([[0,'#05020a'],[.6,'#4a0c14'],[1,'#e0601a']]),0,0,300,200)+GL(150,150,170,'#ff8a2a',.6)+'<ellipse cx="80" cy="40" rx="50" ry="60" fill="#080204" opacity=".8" filter="url(#b14)"/><ellipse cx="230" cy="30" rx="44" ry="56" fill="#080204" opacity=".7" filter="url(#b14)"/>'+PAL(150,'#0a0305',.7)+PA('M10 150Q24 108 40 150Q54 90 72 150Q90 70 110 150Q128 84 150 150Q170 70 190 150Q208 100 228 150Q244 96 262 150Q278 120 292 150Z',FLM)+RC('#050203',0,150,300,50)+PF(F.red,136,113,.26)+DU(30,'#ffb347',0,20,300,150,1.5))],
+dame:[V(300,200,Z(15)+RC(G([[0,'#04060c'],[1,'#1c2d50']]),0,0,300,200)+GL(230,40,110,'#a9c4ee',.4)+'<circle cx="230" cy="40" r="22" fill="#eef3fb"/>'+DU(24,'#fff',0,0,300,100,.8)+RC(G([[0,'#3a4258'],[1,'#0c0f18']]),0,150,300,50)+PA('M0 150H300V158H0Z','#5a6178')+PF(F.woman,96,34,.4)+PF(F.gent,150,40,.38,1)+FO(160,'#c4d4f0',.35)),
+V(300,200,Z(16)+RC(G([[0,'#03050a'],[1,'#122038']]),0,0,300,200)+GL(150,110,90,'#a9c4ee',.35)+RC(G([[0,'#1a2a46'],[1,'#04060c']]),60,140,180,60)+'<path fill-rule="evenodd" d="M0 0H300V200H0ZM60 200V90Q150 -10 240 90V200Z" fill="#06080e"/><g fill="none" stroke="#a9c4ee" opacity=".4"><ellipse cx="170" cy="170" rx="40" ry="6"/><ellipse cx="170" cy="170" rx="70" ry="10" opacity=".5"/></g><ellipse cx="120" cy="152" rx="26" ry="6" fill="#05070b"/><path d="M104 150Q106 126 120 126T136 150Z" fill="#0a0d14"/><path d="M106 144H134" stroke="#7f98c4" stroke-width="1.4"/><ellipse cx="120" cy="152" rx="26" ry="6" fill="none" stroke="#a9c4ee" stroke-width="1" opacity=".8"/>'+PF(F.woman,138,4,.2)+FO(150,'#9fb6d8',.3))],
+opera:[V(300,200,Z(17)+RC(G([[0,'#050308'],[1,'#10243a']]),0,0,300,200)+PA('M0 100Q40 30 80 100V200H0ZM220 100Q260 30 300 100V200H220Z','#150f1c')+PA('M90 110Q150 40 210 110V130H90Z','#0b0710',.7)+GL(150,115,70,'#ffcf6a',.4)+RC(G([[0,'#10243a'],[1,'#03050a']]),0,120,300,80)+'<ellipse cx="150" cy="172" rx="6" ry="26" fill="#ffd77a" opacity=".2" filter="url(#b4)"/>'+DU(10,'#ffd77a',20,128,260,60,2.4)+PA('M90 150Q150 172 210 150L196 164H104Z','#241810')+PF(F.mask,134,58,.32)+'<path d="M170 70L190 170" stroke="#3a2a1c" stroke-width="2"/>'+FO(130,'#9bb4cc',.2)),
+V(300,200,Z(18)+RC(G([[0,'#0a0205'],[1,'#3a0a14']]),0,0,300,200)+GL(150,70,150,'#ffcf6a',.5)+'<path d="M0 60H300M0 90H300" stroke="#c99a38" stroke-width="2" opacity=".5"/><g transform="rotate(-18 150 60)"><path d="M150 0V40" stroke="#c99a38" stroke-width="2"/><ellipse cx="150" cy="52" rx="20" ry="5" fill="none" stroke="#e8b84a" stroke-width="2"/><ellipse cx="150" cy="70" rx="38" ry="9" fill="none" stroke="#e8b84a" stroke-width="2"/><ellipse cx="150" cy="90" rx="58" ry="12" fill="none" stroke="#e8b84a" stroke-width="2"/>'+GL(150,72,50,'#fff1c0',.9)+'<path d="M112 70V100M150 78V108M188 70V100M92 90V114M208 90V114" stroke="#fff1c0" stroke-width="1.4" opacity=".8"/></g>'+RY(150,0,'#ffcf6a',.15)+CR(18,'#05020a',150,182,300,10,6,8)+'<g fill="#05020a">'+'<ellipse cx="30" cy="198" rx="14" ry="12"/><ellipse cx="110" cy="198" rx="14" ry="12"/><ellipse cx="190" cy="198" rx="14" ry="12"/><ellipse cx="270" cy="198" rx="14" ry="12"/></g>')],
+merlin:[V(300,200,Z(19)+RC(G([[0,'#020807'],[1,'#12362c']]),0,0,300,200)+GL(150,100,120,'#e0b04c',.35)+PN(140,14,'#04100c',50,100,0,300)+FO(150,'#7fb8a4',.25)+RC('#030a07',0,184,300,16)+PF(F.wiz,40,30,.52)+PF(F.woman,160,30,.52,1)+GL(150,110,40,'#ffe08a',.8)+'<path d="M144 100l6-8 6 8-6 8zM150 120v10" stroke="#ffe08a" stroke-width="1.2" fill="none"/>'+PA('M0 0H30Q22 100 34 200H0ZM300 0H270Q278 100 266 200H300Z','#020605')+DU(24,'#ffe08a',40,80,220,110,1.3)),
+V(300,200,Z(20)+RC(G([[0,'#030a0c'],[1,'#143a34']]),0,0,300,200)+GL(150,60,130,'#cfe8d0',.28)+'<path d="M140 200V120Q134 90 112 70M140 120Q150 90 176 76M136 150Q110 140 96 120" stroke="#0a0805" stroke-width="9" fill="none" stroke-linecap="round"/>'+CR(14,'#04100c',150,56,150,60,10,22)+CR(46,'#f4f0e2',150,52,130,60,1.8,4.2)+RC('#030a07',0,186,300,14)+'<path d="M70 180Q110 162 150 178L150 192H70Z" fill="#1b2a22"/><circle cx="68" cy="178" r="7" fill="#0a0f0c"/><path d="M62 182Q68 194 80 188" stroke="#cfd8cf" stroke-width="3" fill="none"/>'+GL(115,184,64,'#ffe08a',.45)+'<ellipse cx="115" cy="184" rx="58" ry="12" fill="none" stroke="#ffe08a" stroke-width="2.4" stroke-dasharray="6 4"/>'+PF(F.woman,172,56,.46,1)+DU(26,'#f4f0e2',30,60,240,130,1.2)+FO(196,'#7fb8a4',.2))]};
+document.body.insertAdjacentHTML('afterbegin','<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>'+DF+'</defs></svg>');
+
+var SP=[
+{cover:1},{idx:1},
+{n:'01',a:'drac',ac:'#2a8aa8',k:'L’esprit des eaux du Rhône',by:'Himanshu',t:'Le Drac',r:-4,
+x:['Sur les rives du Rhône, entre Beaucaire et Tarascon, on raconte que le Drac vit sous l’eau, dans un palais de cavernes dorées. Esprit changeant, il adore prendre forme humaine pour piéger les imprudents.',
+'Près de Beaucaire, il devient anneau d’or flottant au fil du courant, cheval blanc docile ou gentilhomme élégant. Qui tend la main, monte en selle ou accepte son bras est entraîné au fond du fleuve.',
+'On dit qu’il ne se montre jamais deux fois sous le même aspect. Au crépuscule, les anciens conseillaient de ne toucher aucun objet brillant qui flotte, et de ne jamais répondre à une voix qui appelle depuis l’eau.',
+'Un jour, une lavandière disparaît. Le Drac l’a enlevée pour la garder sept ans dans son royaume aquatique, où elle découvre des merveilles que nul humain ne devrait voir : des salles de cristal, des galeries d’or, des banquets sans fin.',
+'Selon les versions, elle y est employée comme nourrice de l’enfant du Drac. On lui confie un onguent magique, à passer sur les paupières du petit, avec une interdiction formelle : ne jamais s’en frotter l’œil.',
+'Mais un jour, une démangeaison lui fait porter la main à son visage. Dès lors, elle voit tout : l’eau qui masque les trésors, les sortilèges, et la vraie nature de son maître, sous ses déguisements.',
+'Libérée au bout de sept ans, elle le reconnaît au marché, parmi les étals, occupé à voler des marchandises, et le salue gaiement. Le Drac lui demande de quel œil elle le voit… puis le lui crève. Celui qui en a trop vu doit le payer.',
+'À Beaucaire, la légende est restée vivante, tout comme celle de la Tarasque, le monstre de la ville voisine de Tarascon. Les deux récits rappellent une même idée : le Rhône est beau, mais il n’est jamais tout à fait innocent.'],
+ic:['Un anneau doré brille sur l’eau noire. Qui oserait le ramasser ?','Au marché de Beaucaire, un salut de trop.'],
+rule:'Ne faites jamais confiance aux apparences !',q:'Un inconnu vous invite à entrer dans l’eau. Le suivez-vous ?'},
+{n:'02',a:'rouge',ac:'#c4161f',k:'Le fantôme du palais royal',by:'Aastha',t:'Le Petit Homme Rouge des Tuileries',r:3,
+x:['En 1572, le boucher Jean l’Écorcheur est tué sur ordre de Catherine de Médicis, qui souhaite se débarrasser d’un complice devenu gênant. Avant de mourir, il maudit la famille royale.',
+'Depuis, un petit homme vêtu de rouge hante le palais des Tuileries. On le dit aperçu avant chaque grand malheur, silencieux, le regard fixe, parfois un couteau à la main.',
+'Les témoins le décrivent petit, presque difforme, habillé de rouge de la tête aux pieds. Il ne parle jamais, ne menace pas, ne s’approche pas. Il se contente d’être là, et c’est précisément ce qui glace le sang.',
+'Selon la légende, il serait apparu avant la chute de Marie-Antoinette, puis devant Napoléon, à la veille de ses défaites. D’autres récits ajoutent Henri IV et Louis XVI : chaque fois, un malheur n’a pas tardé à suivre.',
+'Le palais, commencé sous Catherine de Médicis, fut pendant des siècles la résidence des souverains. Ses couloirs sombres et ses grands salons vides entretenaient bien des rumeurs. Les serviteurs refusaient de croiser son chemin.',
+'On raconte que ceux qui le voyaient restaient muets, puis prévenaient discrètement leur maître. Certains, dit-on, ne tenaient aucun compte de l’avertissement. L’histoire se chargeait ensuite de leur donner raison.',
+'En 1871, le palais brûle pendant les troubles de la Commune. Ses ruines sont rasées quelques années plus tard. Mais on jure que la silhouette rouge rôde encore dans les jardins, quand la nuit tombe sur Paris.',
+'La leçon du petit homme rouge est simple : quand tout vous dit que quelque chose cloche, ne regardez pas ailleurs. Un signe ne devient une catastrophe que pour celui qui refuse de le voir.'],
+ic:['Jean l’Écorcheur, dans sa boucherie, avant la malédiction.','Mai 1871 : les Tuileries s’embrasent.'],
+rule:'N’ignorez jamais les signes de danger !',q:'Une silhouette rouge hante ce vieux palais. Enquêtez-vous, ou partez-vous ?'},
+{n:'03',a:'dame',ac:'#7c93c4',k:'Les esprits des ponts isolés',by:'Rajanya',t:'Les Dames Blanches',r:-3,
+x:['En Normandie et dans les Pyrénées, on évite certains ponts après le coucher du soleil. Des femmes vêtues de blanc, belles et glaciales, y montent la garde dans la brume.',
+'Elles surgissent devant le voyageur isolé et lui barrent la route. Leur voix est douce, leur sourire trop fixe, et elles ne demandent jamais deux fois.',
+'On les rencontre là où l’on passe d’une rive à l’autre : ponts, gués, carrefours, vieilles ruines. Ce sont des lieux de transition, que le folklore a toujours peuplés de présences étranges.',
+'Leur apparition est souvent annoncée par un froid soudain, un brouillard qui monte du ruisseau et un silence inhabituel. Même les chiens, dit-on, refusent d’avancer et se mettent à gémir.',
+'Leur exigence est simple : danser avec elles ou chanter pour elles. Ceux qui obéissent avec grâce poursuivent leur chemin sains et saufs, parfois même récompensés par un petit cadeau.',
+'Dans un récit très répandu, un voyageur pressé croit pouvoir passer son chemin. Il hausse les épaules, rit de la dame, et tente de la contourner. Elle ne bouge pas, ne crie pas. Elle attend.',
+'Ceux qui refusent, qui rient ou qui fuient, sont précipités dans le vide, sous le pont. On retrouve parfois leur chapeau au matin, posé sur la berge, comme un avertissement laissé aux suivants.',
+'Dans le doute, mieux vaut savoir une chanson. Et surtout, rester poli : la Dame blanche ne punit pas l’audace, elle punit le mépris.'],
+ic:['Sur le pont désert, la danse commence.','Le refus se paie au pied de l’arche.'],
+rule:'Soyez prudents face à l’inconnu !',q:'Une femme en blanc vous demande de la suivre sur un pont désert. Que faites-vous ?'},
+{n:'04',a:'opera',ac:'#b9852a',k:'Le génie sous l’Opéra',by:'Shreejal',t:'Le Fantôme de l’Opéra Garnier',r:2,
+x:['Sous le Palais Garnier, à Paris, vit Erik, génie défiguré, héros du roman de Gaston Leroux publié en 1910. Il règne sur les couloirs, les loges et un lac souterrain où personne ne va.',
+'Épris de la jeune chanteuse Christine Daaé, il lui enseigne le chant dans l’ombre, caché derrière les murs. Elle croit entendre un ange.',
+'Personne ne l’a jamais vraiment vu. On sait seulement qu’il porte un masque blanc sur le visage, et qu’il exige pour lui la loge n° 5, toujours vide, ainsi qu’une somme d’argent versée chaque mois par la direction.',
+'Ceux qui refusent d’obéir paient cher. Des accidents inexpliqués se multiplient : décors qui tombent, lumières qui s’éteignent, un machiniste retrouvé sans vie. Les artistes murmurent qu’il s’agit du « fantôme de l’Opéra ».',
+'Quand on la lui dispute, il sème le chaos. Le grand lustre s’écrase sur la salle, en pleine représentation, et la panique envahit l’Opéra. Christine est enlevée sous les yeux de tous.',
+'Dans les profondeurs, elle découvre le logis d’Erik, au bord du lac. Il lui avoue son amour, son visage, et sa solitude. Raoul, le fiancé de Christine, descend la sauver, guidé par un étrange compagnon, le Persan.',
+'Mais sa solitude finit par le désarmer : face à la compassion de Christine, le monstre renonce. Il les laisse partir, puis disparaît. Le fantôme n’était qu’un homme à qui l’on n’avait jamais rien offert.',
+'Le roman de Leroux est resté si célèbre que beaucoup de visiteurs cherchent encore, dans le Palais Garnier, la fameuse loge n° 5, et un frisson au passage de chaque rideau.'],
+ic:['Le lac souterrain, sous la scène : on y glisse en barque.','Le lustre tombe sur les spectateurs.'],
+rule:'La curiosité peut être dangereuse !',q:'Quelqu’un chante dans un passage fermé. Entrez-vous ?'},
+{n:'05',a:'merlin',ac:'#3f9a62',k:'L’enchanteur et la fée',by:'Govind',t:'Merlin et Viviane',r:-2,
+x:['En forêt de Brocéliande, en Bretagne, là où les arbres semblent écouter, le grand Merlin rencontre Viviane, jeune fée et future Dame du Lac. Il tombe sous son charme.',
+'Merlin est un enchanteur hors du commun : fils d’une mortelle et d’un démon dans la tradition, il lit l’avenir, change de forme et conseille les rois. C’est lui qui guide le jeune Arthur vers son destin.',
+'Pour lui plaire, il lui enseigne ses sortilèges, un à un, sans rien lui cacher. Elle apprend vite, trop vite, et sourit en silence.',
+'Viviane, elle, ne dit jamais ce qu’elle pense. Les récits la dépeignent tantôt tendre, tantôt calculatrice. Elle est aussi la fée qui élève Lancelot dans son palais caché sous les eaux, ce qui lui vaut son surnom de Dame du Lac.',
+'Les nuits se suivent dans la forêt. Merlin multiplie les promesses et les enseignements. Plus il lui apprend, plus elle se tait. Il croit à l’amour ; elle observe, retient, et attend son heure.',
+'Un soir, Merlin s’endort sous une aubépine en fleurs. Viviane trace alors un cercle autour de lui et prononce la formule qu’il lui a lui-même confiée.',
+'Il se réveille prisonnier d’une Prison d’air, invisible mais infranchissable. Le plus grand des enchanteurs a perdu sa liberté en offrant son savoir. Aucun mur ne le retient : seulement un secret trop bien partagé.',
+'On dit que, depuis, Merlin repose dans la forêt, sous la pierre ou l’aubépine, et qu’en tendant l’oreille, certains soirs, on l’entend encore parler à travers les feuilles.'],
+ic:['Dans la forêt, le maître enseigne son élève.','Sous l’aubépine, le cercle se referme.'],
+rule:'Protégez vos secrets et soyez prudents !',q:'Une enchanteuse vous propose sa magie contre tous vos secrets. Acceptez-vous ?'},
+{end:1,n:'∞',a:'lantern',ac:'#e0b04c',r:-2,t:'Et vous, survivrez-vous ?',rule:'Restez vigilants !',ic:[],L:['<b>Le Drac</b> : méfiez-vous des apparences.','<b>Le Petit Homme Rouge</b> : écoutez les signes du danger.','<b>Les Dames Blanches</b> : prudence face à l’inconnu.','<b>Le Fantôme</b> : la curiosité a un prix.','<b>Merlin et Viviane</b> : protégez vos secrets.']}
+,{game:1},{vocab:1},{refs:1},{back:1}];
+var EX={
+drac:{fh:'Le saviez-vous ?',f:'Dans la tradition provençale, le Drac hante les rivières du Midi, du Rhône à la Durance. On lui prête mille visages : mieux vaut ne jamais ramasser un bijou flottant.',m:'Les lavandières, qui battaient le linge au bord de l’eau, étaient, dit-on, ses proies favorites. On racontait l’histoire aux enfants pour les tenir loin de la rive.',pg:'#0c1a22',tx:'#dfe7e8',L:'A'},
+rouge:{fh:'Dossier',f:'1572 : la malédiction · 1789 : la fin d’un règne · 1871 : l’incendie des Tuileries. Trois dates, un même petit homme rouge.',m:'Le palais n’existe plus, mais le jardin des Tuileries reste ouvert au public. Au crépuscule, certains promeneurs jurent y croiser une silhouette rouge.',pg:'#170b0d',tx:'#eadcc0',L:'B'},
+dame:{fh:'Si vous la croisez',f:'Ayez une chanson prête, un pas de danse en tête, et ne regardez jamais en bas du pont.',m:'Ces apparitions rappellent les fées des gués et des carrefours, très présentes dans les contes d’Europe : les lieux de passage sont ceux où l’on rencontre l’inconnu.',pg:'#0c0e16',tx:'#e3e8f2',L:'C'},
+opera:{fh:'Coulisses',f:'Le Palais Garnier a ouvert en 1875 et possède bel et bien un lac souterrain, né des eaux de nappe sous l’édifice. Gaston Leroux s’en est inspiré pour son roman.',m:'Le roman paraît d’abord en feuilleton avant d’être publié en livre en 1910. Il a inspiré films, comédies musicales et bien des frissons.',pg:'#150a0c',tx:'#e9d9a8',L:'B'},
+merlin:{fh:'Lieux à visiter',f:'La forêt de Paimpont, en Bretagne, passe pour être l’ancienne Brocéliande. On y montre la fontaine de Barenton et le Val sans retour.',m:'Dans certaines versions du mythe, Merlin n’est pas tué mais enfermé : il dort, et la légende veut qu’il puisse encore parler à qui sait l’écouter.',pg:'#0c150f',tx:'#dfe6cf',L:'A'}};
+var TILES=[['drac','#08202e','Le Drac'],['rouge','#1a0709','Le Petit Homme Rouge'],['dame','#101a30','Les Dames Blanches'],['opera','#2e0710','Le Fantôme'],['merlin','#0c2a1f','Merlin'],['lantern','#2e1e08','N° 1']];
+var cur=0,busy=false,bk=document.getElementById('bk'),sh=document.createElement('div'),nn=document.getElementById('n'),pb=document.getElementById('p'),xb=document.getElementById('x');
+var RM=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+sh.className='sh';sh.hidden=true;
+function fo(n,s){return '<span class="fo">'+n+' · '+(s||'FOLKLORE N°1 · NOVEMBRE 2026')+'</span>'}
+function img(d,side,n){var n2=d.n;return '<section class="pg '+side+' ip" style="--a:'+d.ac+'"><div class="art">'+BD[d.a=='lantern'?'end':d.a]+'</div><div class="ttl"><small>N° '+d.n+' · '+(d.k||'Conclusion')+'</small><h2>'+d.t+'</h2>'+(d.by?'<p>Présenté par '+d.by+'</p>':'')+'</div><div class="ghost">'+d.n+'</div><div class="cut" style="--r:'+d.r+'deg">'+ART[d.a]+'</div><div class="st"><span>« '+d.rule+' »</span></div><div class="in" style="position:absolute;inset:0;pointer-events:none;color:#fff">'+fo(n*2+(side=='pl'?0:1),(d.fl||'LÉGENDE '+d.n))+'</div></section>'}
+function txt(d,side,n){var e=EX[d.a]||{},c=e.L=='C'?' circ':'';
+var b=d.end?'<h3>Règles de survie</h3><ol class="rules">'+d.L.map(function(t){return '<li><span>'+t+'</span></li>'}).join('')+'</ol><div class="fact"><b>Merci beaucoup !</b>Soyez prudents, restez vigilants et n’oubliez jamais les règles de survie.</div>'
+:'<h3>Aperçu de la légende</h3><div class="std">'+d.x[0]+'</div><div class="cols">'+d.x.slice(1).concat([e.m]).map(function(t){return '<p>'+t+'</p>'}).join('')+'</div><div class="ins2">'+IN[d.a].map(function(s,i){return '<div class="fig">'+s.replace('<svg','<svg preserveAspectRatio="xMidYMid slice"')+'<i><b>INSTANT '+(i+1)+'</b><br>'+d.ic[i]+'</i></div>'}).join('')+'</div><div class="duo"><div class="fact"><b>'+e.fh+'</b>'+e.f+'</div><div class="fact" style="background:none;color:inherit;border:.3cqw solid var(--tx);box-shadow:none;transform:rotate(.6deg)"><b style="color:var(--a)">Question de survie</b>'+d.q+'</div></div>';
+return '<section class="pg '+side+c+(d.end?' cr':'')+'" style="--a:'+d.ac+';--pg:'+(e.pg||'#e8dfc8')+';--tx:'+(e.tx||'#1b1512')+'"><div class="in"><div class="run"><span>Folklore · N°1</span><span>'+(d.k||'Conclusion')+'</span></div>'+b+fo(n*2+(side=='pl'?0:1))+'</div></section>'}
+function render(n){
+var d=SP[n],h='';cur=n;bk.className='bk'+(d.cover?' cover':'');
+if(d.cover){h='<section class="pg pl"></section><section class="pg pr cv"><div class="in"><div class="fr"></div><div class="mast"><small>N° 1 · SPÉCIAL LÉGENDES · NOVEMBRE 2026</small><h1>Folklore<span>FRANÇAIS</span></h1></div><div class="tiles">'+TILES.map(function(t){return '<div style="background:'+t[1]+'">'+ART[t[0]]+'<em>'+t[2]+'</em></div>'}).join('')+'</div><div class="sub">Le Guide de Survie · Cinq légendes mystérieuses de France</div></div><div class="cut">'+ART.lantern+'</div></section>'}
+else if(d.idx){h='<section class="pg pl" style="--pg:#130c0d"><div class="in"><div class="run"><span>Folklore · N°1</span><span>Édito</span></div><h3>Bienvenue !</h3><div class="std">Un inconnu au bord d’une rivière, un fantôme dans un palais vide, une femme en blanc sur un pont désert… Que feriez-vous ?</div><div class="cols"><p>La France garde dans ses fleuves, ses forêts et ses palais des histoires qui ne dorment jamais vraiment. Chacune cache une règle de survie.</p><p>Cinq légendes. Cinq dangers. Cinq leçons. Tournez la page, et ne faites confiance à personne.</p><p>« Bonjour à tous ! Bienvenue dans notre guide de survie au folklore français. »</p><p>Pour chaque légende, vous trouverez le récit, quelques moments clés, un dossier pour aller plus loin et une question de survie. À la fin, une règle d’or à retenir.</p><p>Lisez attentivement : ces règles pourraient bien vous servir. Car à la dernière page, un jeu vous attend, et il ne pardonne pas aux distraits.</p></div><div class="pq">Cinq légendes.<br>Cinq dangers.<br>Cinq leçons.</div><div class="duo"><div class="fact"><b>Mode d’emploi</b>Lisez chaque légende, regardez les instants, puis répondez à la question de survie.</div><div class="fact"><b>Ambiance</b>À lire de préférence à la lueur d’une bougie, et jamais seul(e) près d’une rivière.</div></div><div class="fact"><b>Sources</b>Légendes populaires de France ; Gaston Leroux, Le Fantôme de l’Opéra (1910). Présenté par Himanshu, Aastha, Rajanya, Shreejal et Govind. Liste complète des sources en page 20.</div>'+fo(2)+'</div></section><section class="pg pr" style="--pg:#0d1820;--tx:#e8eef0"><div class="in"><div class="run"><span>Folklore · N°1</span><span>Sommaire</span></div><div class="circs">'+TILES.slice(0,5).map(function(t){return '<span style="background:'+t[1]+'">'+ART[t[0]]+'</span>'}).join('')+'</div><h3 style="color:#fff">L’INDEX</h3><ul class="list">'+SP.slice(2).filter(function(s){return s.t}).map(function(s,i){return '<li><span><b>'+s.t+'</b></span><span>'+(2*(i+2))+'</span></li>'}).join('')+'<li><span><b>Le jeu : Survivrez-vous ?</b></span><span>16</span></li><li><span><b>Vocabulaire</b></span><span>18</span></li><li><span><b>Sources &amp; générique</b></span><span>20</span></li><li><span><b>Prochain numéro</b></span><span>22</span></li></ul>'+fo(3)+'</div></section>'}
+else if(d.game){var G={n:'?',a:'lantern',ac:'#d9262f',k:'Le jeu',t:'Survivrez-vous ?',rule:'Scannez et survivez !',r:3,fl:'LE JEU'};
+h=img(G,'pl',n)+'<section class="pg pr gm" style="--a:#d9262f;--pg:#17110f;--tx:#efe7d2"><div class="in"><div class="run"><span>Folklore · N°1</span><span>Le jeu</span></div><h3>Survivrez-vous ?</h3><div class="std">Vous avez écouté les cinq légendes et retenu leurs règles d’or. Il est temps de les mettre à l’épreuve.</div><div class="qrc"><img alt="QR code du jeu Survivrez-vous ?" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAhAAAAIQAQAAAAD4e2okAAADf0lEQVR42u2d3XHaQBSFz7EYy5nxDMzkJW+QDtIBuKN0ILkEd5BODB0kHeAOyBtMQCcPKwkkfmwMkiE5+4K1Wj4vl9X1/ds1hVPbDYwwwggjjDDCCCOMaAoBSZrX+rqSJE03+yhJs10DLU4jjDDi7Ai9G0EpzX/i6BpkMVTRssNvSLYGemkZYcR1IR5Jkvn1iiSHxRPd1xyQxjsGHjML+hsxwggj2kAkmvDOsjDCCCMuH/HCO4hM0dccuhIP0QgjjPhvEMmhYFAslR5ifaDFaYQRl4cYNzGLTv464RvfsD2wUVkkWfVjp1m6Z+TuNOQSkKaIlQGJpoglYHhiGlIfsy5SPyNGGPEvITrBGNt5r68F61rK4jTCCCM+FpHbWusaidKEKku+1lUGm7YWy06L0wgjjGgbEReBrlwV/QSAsaah5xsAIKvptOWo0HPVWdyGlwEAPNyMwtUvkmQETNgDgO/ht01ujnXvXH9hhBFGnNNcK9sYQCSFBGbdPMv1X1yUk9lcM8III/a17BhE+t5ZiHzWDCsyBPRVUV+/2QnKKtdz0z2zGJ84CwAjrwsjjGgJUXtSj0q9jT/sg4gkyTtQemBfkgBgQZLShF2JJHvBCHsJFfqPHBylcuSlZYQRRryx8U0e4hTlVu0oXMeF1zgHQvFEtHGdOKBvhBFGtI6opiFj5fZQtJGWTLaKwkqPcWdcS/5GjDDCiPa0VrZ5dkMlfFUWqiZFBev+aPzoImRxBod75KVlhBGXjPisKSgN1j2zmm2Vd/4AoOEqt8Y6G/fu8QUAvhKIljsc03yXwdMTsCCzVmSRel0YYYQfs21zbbstw824UiyR23FlWtKhMSOMMKIpxCslogtWWw+RVNZIpGFEGNgBwqkWOJSGPNDm/jtihBE21xpBZM8aABCQol9UqH4KwbH8Otlb8gUAK0ajEJ3iptK8xX2j4hyqkjo97Ru59eo0wojrRMwOa8RcRQzzzCWV5YdX1PXbdrOTaYQRRlwSoqwiq2wwKjccUWLYHXnaLHr2EI0w4iI9xHY2Bb1j/H7EIwchZrYxna7+hA1HXhdGGGFEG4iDurNyXGskSZOwzygtAvhDvTCWyME6P4nL3xl6Bg3upWWEEcA7znVtZBaHD2VF7UiKbi1Y/srJE3bvjDDCiLMjKACL2r8j6s6ORlicRhhhhBFGGGGEEY0g/gIRoEbAvaYE5QAAAABJRU5ErkJggg=="><b>Scannez-moi</b></div><p style="margin:0 0 1.5cqw">Ce jeu est un <b>scénario</b> : vous vous retrouvez dans une situation semblable à celles de nos légendes. Une rive, un palais, un pont, un passage interdit, une forêt… et face à vous, une décision à prendre.</p><p style="margin:0 0 1.5cqw">À chaque étape, l’un de vos choix peut vous sauver. Ou vous perdre.</p><div class="cl"></div><ol class="rules"><li><span><b>Scannez</b> le QR code avec votre téléphone.</span></li><li><span><b>Plongez</b> dans la situation : observez, écoutez, réfléchissez.</span></li><li><span><b>Choisissez</b> en vous souvenant des règles d’or.</span></li></ol><div class="fact" style="background:none;color:inherit;border:.3cqw solid var(--tx);box-shadow:none;transform:rotate(.6deg)"><b style="color:var(--a)">Rappel des règles d’or</b>Ne faites pas confiance aux apparences · N’ignorez pas les signes de danger · Soyez prudents face à l’inconnu · La curiosité peut être dangereuse · Protégez vos secrets.</div><div class="fact"><b>Alors, survivrez-vous ?</b>Pas de QR code sous la main ? Ouvrez le lien : <a href="https://qrto.org/XDsjUX" style="color:#fff">qrto.org/XDsjUX</a></div>'+fo(17)+'</div></section>'}
+else if(d.vocab){h='<section class="pg pl" style="--a:#d9262f;--pg:#150a0c"><div class="in"><div class="run"><span>Folklore · N°1</span><span>Vocabulaire</span></div><h3>Le Vocabulaire</h3><div class="std">Des mots à retenir pour lire… et survivre. Français → English.</div><div class="vc"><h4>Le Drac</h4><div><b>le fleuve</b><i>the river</i></div><div><b>la lavandière</b><i>the washerwoman</i></div><div><b>l’anneau d’or</b><i>the golden ring</i></div><div><b>le cheval blanc</b><i>the white horse</i></div><div><b>le marché</b><i>the market</i></div><div><b>crever l’œil</b><i>to put out an eye</i></div><h4>Le Petit Homme Rouge</h4><div><b>le boucher</b><i>the butcher</i></div><div><b>la malédiction</b><i>the curse</i></div><div><b>le palais</b><i>the palace</i></div><div><b>l’incendie</b><i>the fire</i></div><div><b>le signe</b><i>the sign</i></div><div><b>la silhouette</b><i>the silhouette</i></div><h4>Les Dames Blanches</h4><div><b>le pont</b><i>the bridge</i></div><div><b>la brume</b><i>the mist</i></div><div><b>la robe blanche</b><i>the white dress</i></div><div><b>danser</b><i>to dance</i></div><div><b>chanter</b><i>to sing</i></div><div><b>le vide</b><i>the drop</i></div></div><div class="fact"><b>Astuce</b>En français, la dernière consonne d’un mot ne se prononce souvent pas : « le palais » se dit « pa-lé ».</div>'+fo(18)+'</div></section><section class="pg pr" style="--a:#b8923f;--pg:#0c0e16"><div class="in"><div class="run"><span>Folklore · N°1</span><span>Vocabulaire</span></div><h3>Mots &amp; phrases</h3><div class="vc"><h4>Le Fantôme de l’Opéra</h4><div><b>le lustre</b><i>the chandelier</i></div><div><b>le masque</b><i>the mask</i></div><div><b>la loge</b><i>the theatre box</i></div><div><b>le lac souterrain</b><i>the underground lake</i></div><div><b>les coulisses</b><i>backstage</i></div><div><b>le fantôme</b><i>the ghost</i></div><h4>Merlin et Viviane</h4><div><b>la forêt</b><i>the forest</i></div><div><b>l’aubépine</b><i>the hawthorn</i></div><div><b>l’enchanteur</b><i>the sorcerer</i></div><div><b>la fée</b><i>the fairy</i></div><div><b>le sortilège</b><i>the spell</i></div><div><b>le secret</b><i>the secret</i></div><h4>Règles d’or</h4><div><b>les apparences</b><i>appearances</i></div><div><b>le danger</b><i>danger</i></div><div><b>prudent(e)</b><i>careful</i></div><div><b>la curiosité</b><i>curiosity</i></div><div><b>survivre</b><i>to survive</i></div><div><b>la règle d’or</b><i>the golden rule</i></div></div><ul class="list"><li><span><b>« Ne faites jamais confiance aux apparences ! »</b></span></li><li><span>Never trust appearances!</span></li><li><span><b>« Soyez prudents, restez vigilants ! »</b></span></li><li><span>Be careful, stay alert!</span></li><li><span><b>« Survivrez-vous ? »</b></span><span>Will you survive?</span></li></ul>'+fo(19)+'</div></section>'}
+else if(d.refs){h='<section class="pg pl" style="--a:#b8923f;--pg:#120d0d"><div class="in"><div class="run"><span>Folklore · N°1</span><span>Sources</span></div><h3>Sources &amp; références</h3><ul class="refs"><li><b>Général</b>Paul Sébillot, <i>Le Folk-lore de France</i> (Paris, 1904–1907).</li><li><b>Le Drac</b>Gervais de Tilbury, <i>Otia imperialia</i> (début du XIIIe siècle) ; Frédéric Mistral, <i>Poème du Rhône</i> (1897), chant VI ; Provence-Camargue Tourisme, « Le Drac de Beaucaire ».</li><li><b>Le Petit Homme Rouge</b>Paris Zigzag (pariszigzag.fr), articles « Jean l’Écorcheur » et « Le fantôme des Tuileries ».</li><li><b>Les Dames Blanches</b>Thomas Keightley, <i>The Fairy Mythology</i> (éd. 1870) ; article « Dames blanches », Wikipedia.</li><li><b>Le Fantôme de l’Opéra</b>Gaston Leroux, <i>Le Fantôme de l’Opéra</i> (feuilleton 1909–1910, livre en 1910).</li><li><b>Merlin et Viviane</b>Robert de Boron, <i>Merlin</i> (vers 1200) ; cycle de la Vulgate, <i>Lancelot-Graal</i> (XIIIe siècle).</li></ul><div class="fact"><b>À noter</b>Ces légendes existent en plusieurs versions : nous avons retenu celles de notre guide. Illustrations vectorielles originales ; polices Playfair Display, Cormorant Garamond et Cinzel (Google Fonts).</div>'+fo(20)+'</div></section><section class="pg pr" style="--a:#d9262f;--pg:#150a0c"><div class="in"><div class="run"><span>Folklore · N°1</span><span>Générique</span></div><h3>Générique</h3><div class="std">Compilé par l’équipe Folklore, sous la direction de Ms. Apurva.</div><div class="team"><h4>Équipe</h4><div><span><b>Aastha</b><em>Le Petit Homme Rouge</em></span><i>RA2611003010459</i></div><div><span><b>Shreejal</b><em>Le Fantôme de l’Opéra</em></span><i>RA2611003010470</i></div><div><span><b>Govind</b><em>Merlin et Viviane</em></span><i>RA2611003010471</i></div><div><span><b>Rajanya</b><em>Les Dames Blanches</em></span><i>RA2611003010523</i></div><div><span><b>Himanshu</b><em>Le Drac</em></span><i>RA2611003010516</i></div></div><div class="duo"><div class="fact"><b>Faculty</b>Ms. Apurva</div><div class="fact"><b>Slot</b>A</div></div>'+fo(21)+'</div></section>'}
+else if(d.back){h='<section class="pg pl" style="--pg:#130c0d"><div class="in"><div class="run"><span>Folklore · N°1</span><span>À suivre</span></div><h3>Dans le prochain numéro</h3><ul class="rules"><li><span><b>La Bête du Gévaudan</b> : le loup qui terrorisait les villages.</span></li><li><span><b>La Dame du Lac</b> : les eaux qui n’oublient rien.</span></li><li><span><b>Les Feux follets</b> : ne suivez jamais la lumière.</span></li></ul><div class="fact"><b>Crédits</b>Compilé par l’équipe Folklore : Himanshu, Aastha, Rajanya, Shreejal, Govind. Faculty : Ms. Apurva · Slot A.</div>'+fo(22)+'</div></section><section class="pg pr" style="--pg:#0e0a0a;--tx:#efe7d2"><div class="in" style="text-align:center"><h1 style="font-size:13cqw;font-style:italic;color:var(--blood);margin-top:22cqw">Folklore<span style="display:block;font-size:5cqw;letter-spacing:.3em;font-style:normal;color:var(--tx)">FRANÇAIS</span></h1><p style="font-style:italic;font-size:2.6cqw;margin-top:6cqw">Ne suivez jamais la lumière.</p><div class="bar"></div><p style="font-size:1.6cqw;letter-spacing:.3em;margin-top:3cqw">N° 1 · NOVEMBRE 2026 · 0,00 €</p></div></section>'}
+else{var L=EX[d.a]?EX[d.a].L:'A';var left=(L=='B');
+h=left?txt(d,'pl',n)+img(d,'pr',n):img(d,'pl',n)+txt(d,'pr',n)}
+bk.innerHTML=h;bk.appendChild(sh);
+nn.textContent=n==0?'COUVERTURE':'PAGES '+(2*n)+'–'+(2*n+1);pb.disabled=n==0;xb.disabled=n==SP.length-1;window.scrollTo(0,0)}
+function go(n){
+if(busy||n<0||n>=SP.length||n==cur)return;busy=true;bk.classList.remove('pop');
+if(RM){render(n);bk.classList.add('pop');busy=false;return}
+var f=n>cur;sh.className='sh'+(f?'':' back');sh.hidden=false;
+sh.animate([{transform:'perspective(2200px) rotateY(0deg)'},{transform:'perspective(2200px) rotateY('+(f?-180:180)+'deg)'}],{duration:900,easing:'cubic-bezier(.55,0,.25,1)'});
+setTimeout(function(){render(n);sh.hidden=false;sh.className='sh'+(f?'':' back')},450);
+setTimeout(function(){sh.hidden=true;bk.classList.add('pop');busy=false},900)}
+pb.onclick=function(){go(cur-1)};xb.onclick=function(){go(cur+1)};
+document.addEventListener('keydown',function(e){if(e.key=='ArrowLeft')go(cur-1);if(e.key=='ArrowRight')go(cur+1)});
+var sx=0;document.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+document.addEventListener('touchend',function(e){var d=e.changedTouches[0].clientX-sx;if(d>70)go(cur-1);if(d<-70)go(cur+1)},{passive:true});
+bk.addEventListener('click',function(e){if(cur==0&&e.target.closest('.pr'))go(1)});
+render(0);setTimeout(function(){bk.classList.add('pop')},300);
+</script>
+</body>
+</html>
